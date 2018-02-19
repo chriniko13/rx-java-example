@@ -27,7 +27,7 @@
             <version>${rx.java.version}</version>
         </dependency>
 
-        <!-- NewsApiConnector -->
+        <!-- Connector -->
         <dependency>
             <groupId>com.chriniko.example</groupId>
             <artifactId>connector</artifactId>
