@@ -67,7 +67,8 @@ public class UiAppController implements UiUpdater {
 
         // create subscription...
         Subscription newsApiSubscription = articleObservable
-                .subscribeOn(Schedulers.io())
+                .subscribeOn(Schedulers.io()) // Note: background thread - observable
+                .observeOn(Schedulers.computation()) // Note: ui thread - observer(s)
                 .subscribe(newsApiObserver);
 
         System.out.println("newsApiSubscription.isUnsubscribed ? " + newsApiSubscription.isUnsubscribed());
